@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8237aec5-5bff-4b6f-a21a-cd6747db5f5d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="8237aec5-5bff-4b6f-a21a-cd6747db5f5d" name="Default" comment="" />
     <ignored path="dailyfresh.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -95,8 +92,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/apps/user/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="190" column="42" lean-forward="true" selection-start-line="190" selection-start-column="42" selection-end-line="190" selection-end-column="42" />
+            <state relative-caret-position="141">
+              <caret line="184" column="23" lean-forward="true" selection-start-line="184" selection-start-column="23" selection-end-line="184" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -185,10 +182,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="726" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="136" />
+    <option name="y" value="115" />
     <option name="width" value="768" />
-    <option name="height" value="602" />
+    <option name="height" value="597" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -349,15 +347,15 @@
       <option name="presentableId" value="Default" />
       <updated>1510566739293</updated>
       <workItem from="1558691186828" duration="11672000" />
-      <workItem from="1558747740143" duration="301000" />
+      <workItem from="1558747740143" duration="1421000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11973000" />
+    <option name="totallyTimeSpent" value="13093000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="726" width="768" height="602" extended-state="0" />
+    <frame x="136" y="115" width="768" height="597" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.39469698" />
@@ -371,7 +369,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49711815" visible="true" weight="0.45702305" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49711815" visible="true" weight="0.4618644" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5028818" side_tool="true" weight="0.66544116" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.5642458" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -726,8 +724,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/user/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="190" column="42" lean-forward="true" selection-start-line="190" selection-start-column="42" selection-end-line="190" selection-end-column="42" />
+        <state relative-caret-position="141">
+          <caret line="184" column="23" lean-forward="true" selection-start-line="184" selection-start-column="23" selection-end-line="184" selection-end-column="23" />
         </state>
       </provider>
     </entry>
