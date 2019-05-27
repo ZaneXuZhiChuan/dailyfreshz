@@ -8,7 +8,7 @@ from django.conf import settings
 
 from apps.user.models import User, Address
 from apps.goods.models import GoodsSKU
-from celery_tasks.tasks import send_register_active_email
+from celery_tasks.tasks import send_register_active_email  #, generate_static_index_html
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from itsdangerous import SignatureExpired
 from utils.mixin import LoginRequiredMixin
@@ -95,7 +95,7 @@ def register_handle(request):
         user = None
 
     if user:
-        # 用户名已存在
+        # 用户名已存在is_authenticated
         return render(request, 'register.html', {'errmsg': '用户名已存在'})
 
     # 进行业务处理: 进行用户注册
@@ -162,6 +162,7 @@ class RegisterView(View):
 
         # 发邮件
         send_register_active_email.delay(email, username, token)
+        # generate_static_index_html.delay()
 
         # 返回应答, 跳转到首页
         return redirect(reverse('goods:index'))
@@ -272,10 +273,6 @@ class UserInfoView(LoginRequiredMixin, View):
 
     def get(self, request):
         '''显示'''
-        # Django会给request对象添加一个属性request.user
-        # 如果用户未登录->user是AnonymousUser类的一个实例对象
-        # 如果用户登录->user是User类的一个实例对象
-        # request.user.is_authenticated()
 
         # 获取用户的个人信息
         user = request.user
@@ -285,20 +282,10 @@ class UserInfoView(LoginRequiredMixin, View):
         # from redis import StrictRedis
         # sr = StrictRedis(host='172.16.179.130', port='6379', db=9)
         con = get_redis_connection('default')
-
         history_key = 'history_%d' % user.id
 
         # 获取用户最新浏览的5个商品的id
-        sku_ids = con.lrange(history_key, 0, 4)  # [2,3,1]
-
-        # 从数据库中查询用户浏览的商品的具体信息
-        # goods_li = GoodsSKU.objects.filter(id__in=sku_ids)
-        #
-        # goods_res = []
-        # for a_id in sku_ids:
-        #     for goods in goods_li:
-        #         if a_id == goods.id:
-        #             goods_res.append(goods)
+        sku_ids = con.lrange(history_key, 0, 4)
 
         # 遍历获取用户浏览的商品信息
         goods_li = []
