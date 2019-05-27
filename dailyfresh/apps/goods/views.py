@@ -1,7 +1,7 @@
 from django.shortcuts import render
+from django.views.generic import View
 
-
-# Create your views here.
-# 商品首页界面
-def IndexView(request):
-    return render(request, 'index.html')
+class IndexView(View):
+    def get(self, request):
+        '''显示首页'''
+        return render(request, 'index.html')

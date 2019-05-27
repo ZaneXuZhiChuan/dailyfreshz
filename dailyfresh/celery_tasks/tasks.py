@@ -27,3 +27,7 @@ def send_register_active_email(to_email, username, token):
 
     send_mail(subject, message, sender, receiver, html_message=html_message)
     time.sleep(5)
+
+
+def generate_static_index_html():
+    '''产生首页静态页面'''
