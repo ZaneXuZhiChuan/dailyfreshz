@@ -8,7 +8,7 @@ from django.conf import settings
 
 from apps.user.models import User, Address
 from apps.goods.models import GoodsSKU
-from celery_tasks.tasks import send_register_active_email  #, generate_static_index_html
+from celery_tasks.tasks import send_register_active_email, generate_static_index_html
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from itsdangerous import SignatureExpired
 from utils.mixin import LoginRequiredMixin
@@ -162,7 +162,7 @@ class RegisterView(View):
 
         # 发邮件
         send_register_active_email.delay(email, username, token)
-        # generate_static_index_html.delay()
+        generate_static_index_html.delay()
 
         # 返回应答, 跳转到首页
         return redirect(reverse('goods:index'))
