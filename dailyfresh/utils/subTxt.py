@@ -9,19 +9,12 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "dailyfresh.settings")
 django.setup()
 
 '''将Index中固定的src地址更改为static形式'''
-
-
-# <a href="#"><img src="images/goods/goods019.jpg"></a>
-# {% static 'images/goods/goods012.jpg' %}
-# {% static '%s' %}
 class changeIndexSrc:
     index_html = os.path.join(settings.BASE_DIR, 'templates/index.html')
     save_path = os.path.join(settings.BASE_DIR, 'templates/index.html')
-    pattern = '<img src="images/([\w/])*\.jpg">'
     with open(index_html, 'r') as f:
         with open(save_path, 'w') as f2:
             for line in f:
-                # pat = re.compile(r'<img src="(images/[\w/]*\.jpg)">')
                 pat = re.compile(r'src="([\w/\.]*)">')
                 res = pat.findall(line)
                 if len(res) > 0:
@@ -30,7 +23,6 @@ class changeIndexSrc:
                         f2.write(re.sub(r, rp, line))
                 else:
                     f2.write(line)
-
 
 if __name__ == '__main__':
     changeIndex = changeIndexSrc()
