@@ -21,7 +21,6 @@ import time
 
 
 # /user/register
-# GET POST PUT DELETE OPTION
 def register(request):
     '''注册'''
     if request.method == 'GET':
