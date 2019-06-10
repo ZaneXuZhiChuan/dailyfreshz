@@ -90,7 +90,6 @@ class CartInfoView(View):
             # 累加计算商品的总数目和总价格
             total_count += int(count)
             total_price += amount
-
         # 组织上下文
         context = {'total_count': total_count,
                    'total_price': total_price,
